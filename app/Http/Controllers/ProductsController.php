@@ -38,6 +38,12 @@ class ProductsController extends Controller
         return view('products.create', compact('products'));
     }
 
+    public function login()
+    {
+        $products = Product::all();
+        return view('products.login' , compact('products'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *

@@ -3,37 +3,41 @@
 
 @section('content')
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <div class="box-all">
-                <a href="{{route('products.index')}}" type="text" class="home">
-                    Home
-                </a>
-            </div>
-        <div class="box-all">
-            <select class="cities">
-                <option hidden disabled selected>Выберите город</option>
-                <option value="0">Атырау</option>
-                <option value="1">Алматы</option>
-                <option value="2">Астана</option>
-                <option value="3">Шымкент</option>
-                <option value="4">Актобе</option>
-                <option value="5">Актау</option>
-            </select>
-        </div>
-        <div class="box-all">
-            <a href="{{route('products.create')}}" class="login">
-                Login
-            </a>
-        </div>
-        <div style="padding-bottom: 10px">
-            <h1 class="idoctor">IDoctor</h1>
-        </div>
-        <div class="search-box">
-            <input type="text" name="text" class="search-txt" placeholder="Type to search"/>
-            <a class="search-btn" href="{{route('products.show')}}">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-        </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="box-all">
+        <a href="{{route('products.index')}}" type="text" class="home">
+            Home
+        </a>
+    </div>
+    <div class="box-all">
+        <select class="cities">
+            <option hidden disabled selected>Выберите город</option>
+            <option value="0">Атырау</option>
+            <option value="1">Алматы</option>
+            <option value="2">Астана</option>
+            <option value="3">Шымкент</option>
+            <option value="4">Актобе</option>
+            <option value="5">Актау</option>
+        </select>
+    </div>
+    <div class="box-all">
+        <a href="login.blade.php" class="login">
+            Login
+        </a>
+    </div>
+    <div style="padding-bottom: 10px">
+        <h1 class="idoctor">IDoctor</h1>
+    </div>
+    <div class="search-box">
+        <input type="text" name="text" class="search-txt" placeholder="Type to search"/>
+        <a class="search-btn" href="#">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    {{--        <a href="{{route('products.create')}}" type="button" class="btn btn-outline-primary">--}}
+    {{--            Add product--}}
+    {{--        </a>--}}
 
     <style>
         * {
