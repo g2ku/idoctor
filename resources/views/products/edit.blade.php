@@ -1,4 +1,4 @@
-@extends('base')
+ @extends('base')
 
 @section('content')
     <a href="{{route('products.index')}}" type="text" class="home">

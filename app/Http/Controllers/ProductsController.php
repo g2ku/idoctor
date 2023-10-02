@@ -57,11 +57,7 @@ class ProductsController extends Controller
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->email = $request->input('email');
-        $image = $request->file('pictures');
-        if ($image) {
-            $image->move(public_path('pictures'), $image->getClientOriginalName());
-            $product->pictures = $image->getClientOriginalName();
-        }
+
         $product->save();
 
         return redirect('/products');

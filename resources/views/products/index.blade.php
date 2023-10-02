@@ -1,13 +1,11 @@
 @extends('base')
-
-
 @section('content')
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <div class="box-all">
                 <a href="{{route('products.index')}}" type="text" class="home">
                     Home
                 </a>
+
             </div>
         <div class="box-all">
             <select class="cities">
@@ -30,7 +28,7 @@
         </div>
         <div class="search-box">
             <input type="text" name="text" class="search-txt" placeholder="Type to search"/>
-            <a class="search-btn" href="{{route('products.show')}}">
+            <a class="search-btn" href="{{route('products.login')}}">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </div>

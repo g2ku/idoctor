@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductsController::class, 'index'])->name('home');
 Route::resource('products', ProductsController::class);
-
+Route::get('/products/login', 'ProductController@login')->name('products.login');
 
 
