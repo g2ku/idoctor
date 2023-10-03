@@ -26,12 +26,14 @@
         <div style="padding-bottom: 10px">
             <h1 class="idoctor">IDoctor</h1>
         </div>
-        <div class="search-box">
-            <input type="text" name="text" class="search-txt" placeholder="Type to search"/>
-            <a class="search-btn" href="{{route('products.login')}}">
+
+        <form class="search-box" method="GET" action="{{ route('products.search') }}">
+            <input type="text" id="query" name="query" class="search-txt"
+                   value="{{ old('query') }}" placeholder="Type to search"/>
+            <button type="submit" class="search-btn">it
                 <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-        </div>
+            </button>
+        </form>
 
     <style>
         * {

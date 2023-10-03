@@ -38,10 +38,12 @@ class ProductsController extends Controller
         return view('products.create', compact('products'));
     }
 
-    public function login()
+    public function search(Request $request)
     {
-        $products = Product::all();
-        return view('products.login' , compact('products'));
+        $query = $request->input('query');
+        $results = Product::where('products', 'like', '%' . $query . '%')->paginate(10);
+
+        return view('products.search', ['results' => $results]);
     }
 
     /**
