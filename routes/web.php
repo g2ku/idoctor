@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ProductsController::class, 'index'])->name('home');
 Route::get('/products/search', [ProductsController::class, 'search'])->name('products.search');
+Route::get('/products/show', [ProductsController::class, 'show']) ->name('product.show');
+Route::post('/send-email', [\App\Http\Controllers\EmailController::class, 'sendEmail'])->name('send.email');
+Route::post('/products/filter', [ProductsController::class, 'filterProducts'])->name('products.filter');
 Route::resource('products', ProductsController::class);
-
-

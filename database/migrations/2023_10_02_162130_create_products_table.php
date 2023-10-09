@@ -9,11 +9,12 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id(); // Автоинкрементируемый первичный ключ
-            $table->string('name'); // Поле 'name' типа VARCHAR
+            $table->id();
+            $table->string('name');
             $table->string('products');
-            $table->string('query');
-            $table->timestamps(); // Добавляет поля 'created_at' и 'updated_at'
+            $table->string('tag');
+            $table->string('phone');
+            $table->timestamps();
         });
     }
 

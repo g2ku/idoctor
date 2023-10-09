@@ -38,13 +38,28 @@ class ProductsController extends Controller
         return view('products.create', compact('products'));
     }
 
-    public function search(Request $request)
+    public function search()
     {
-        $query = $request->input('query');
-        $results = Product::where('products', 'like', '%' . $query . '%')->paginate(10);
-
-        return view('products.search', ['results' => $results]);
+        $tags = \App\Models\Tag::all();
+        $products = Product::all();
+        return view('products.search', compact('tags','products'));
     }
+
+    public function filterProducts(Request $request)
+    {
+        $tagIds = $request->input('tags');
+
+        if (!empty($tagIds)) {
+            $products = Product::whereHas('tags', function ($query) use ($tagIds) {
+                $query->whereIn('tags.id', $tagIds);
+            })->get();
+        } else {
+            $products = Product::all();
+        }
+
+        return view('products.search_results', compact('products'));
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -57,8 +72,9 @@ class ProductsController extends Controller
         $product = new Product();
 
         $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        $product->email = $request->input('email');
+        $product->products = $request->input('products');
+        $product->tag = $request->input('tag');
+        $product->phone = $request->input('phone');
 
         $product->save();
 
@@ -88,38 +104,4 @@ class ProductsController extends Controller
         return view('products.edit', compact('product' , 'products'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param ProductRequest $request
-     * @param Product $product
-     * @return RedirectResponse
-     */
-    public function update(ProductRequest $request, Product $product): RedirectResponse
-    {
-        $data = $request->all();
-
-        if ($request->hasFile('picture')) {
-            $data['picture'] = $request->file('picture')->store('pictures', 'public');
-        }
-
-        $product->update($data);
-
-        return redirect()
-            ->route('products.show', ['product' => $product])
-            ->with('status', "Product {$product->title} successfully updated!");
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param Product $product
-     * @return RedirectResponse
-     */
-    public function destroy(Product $product): RedirectResponse
-    {
-        $product->delete();
-
-        return redirect()->route('home')->with('status', $product->title . ' successfully deleted!');
-    }
 }

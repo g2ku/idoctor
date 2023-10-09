@@ -5,7 +5,7 @@
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
         <title>IDoctor</title>
 
@@ -62,19 +62,6 @@
                             Sign Up
                         </a>
                     </div>
-                    <div class="flex-c-m">
-                        <a href="#" class="login100-social-item bg1">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-
-                        <a href="#" class="login100-social-item bg2">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-
-                        <a href="#" class="login100-social-item bg3">
-                            <i class="fa fa-google"></i>
-                        </a>
-                    </div>
                 </form>
             </div>
         </div>
@@ -97,38 +84,22 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            font-size: 90px;
-        }
-
-        @font-face {
-            font-family: Poppins-Regular;
-        }
-
-        @font-face {
-            font-family: Poppins-Medium;
-        }
-
-        @font-face {
-            font-family: Poppins-Bold;
-        }
-
-        @font-face {
-            font-family: Poppins-SemiBold;
+            font-size: 70px;
+            font-weight: bold;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Nunito, sans-serif;
         }
 
         body, html {
             height: 100%;
-            font-family: Poppins-Regular, sans-serif;
         }
 
         a {
-            font-family: Poppins-Regular, serif;
             font-size: 14px;
             line-height: 1.7;
             color: #666666;
@@ -137,6 +108,8 @@
             -webkit-transition: all 0.4s;
             -o-transition: all 0.4s;
             -moz-transition: all 0.4s;
+            text-decoration: none;
+
         }
 
         a:focus {
@@ -153,13 +126,12 @@
         }
 
         p {
-            font-family: Poppins-Regular , serif;
             font-size: 14px;
             line-height: 1.7;
             color: #666666;
             margin: 0px;
         }
-        
+
         ul, li {
             margin: 0;
             list-style-type: none;
@@ -215,7 +187,6 @@
         }
 
         .txt1 {
-            font-family: Poppins-Regular, serif;
             font-size: 14px;
             line-height: 1.5;
             color: #666666;
@@ -223,7 +194,6 @@
         }
 
         .txt2 {
-            font-family: Poppins-Regular, serif;
             font-size: 14px;
             line-height: 1.5;
             color: #333333;
@@ -242,7 +212,7 @@
 
         .container-login100 {
             width: 100%;
-            min-height: 80vh;
+            min-height: 70vh;
             display: -webkit-box;
             display: -webkit-flex;
             display: -moz-box;
@@ -271,7 +241,6 @@
 
         .login100-form-title {
             display: block;
-            font-family: Poppins-Bold, serif;
             font-size: 39px;
             color: #333333;
             line-height: 1.2;
@@ -285,7 +254,6 @@
         }
 
         .label-input100 {
-            font-family: Poppins-Regular, serif;
             font-size: 14px;
             color: #333333;
             line-height: 1.5;
@@ -293,7 +261,6 @@
         }
 
         .input100 {
-            font-family: Poppins-Medium, serif;
             font-size: 16px;
             color: #333333;
             line-height: 1.2;
@@ -305,68 +272,6 @@
             padding: 0 7px 0 43px;
         }
 
-
-        .focus-input100 {
-            position: absolute;
-            display: block;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-        }
-
-        .focus-input100::after {
-            content: attr(data-symbol);
-            font-family: Poppins-Regular, serif;
-            color: #adadad;
-            font-size: 22px;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            height: calc(100% - 20px);
-            bottom: 0;
-            left: 0;
-            padding-left: 13px;
-            padding-top: 3px;
-        }
-
-        .focus-input100::before {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #7f7f7f;
-            -webkit-transition: all 0.4s;
-            -o-transition: all 0.4s;
-            -moz-transition: all 0.4s;
-            transition: all 0.4s;
-        }
-
-
-        .input100:focus + .focus-input100::before {
-            width: 100%;
-        }
-
-        .has-val.input100 + .focus-input100::before {
-            width: 100%;
-        }
-
-        .input100:focus + .focus-input100::after {
-            color: #a64bf4;
-        }
-
-        .has-val.input100 + .focus-input100::after {
-            color: #a64bf4;
-        }
 
         .container-login100-form-btn {
             display: -webkit-box;
@@ -414,7 +319,6 @@
         }
 
         .login100-form-btn {
-            font-family: Poppins-Medium, serif;
             font-size: 16px;
             color: #fff;
             line-height: 1.2;
@@ -458,7 +362,6 @@
             right: 2px;
             pointer-events: none;
 
-            font-family: Poppins-Regular, serif;
             color: #c80000;
             font-size: 13px;
             line-height: 1.4;
@@ -475,7 +378,6 @@
 
         .alert-validate::after {
             content: "\f06a";
-            font-family: Poppins-Regular, serif;
             display: block;
             position: absolute;
             color: #c80000;

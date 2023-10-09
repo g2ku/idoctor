@@ -5,8 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SearchQuery extends Model
+class Tag extends Model
 {
     use HasFactory;
-    protected $fillable = ['query'];
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
+
 }

@@ -15,4 +15,9 @@ class Product extends Model
      */
     protected $fillable = ['name', 'email', 'phone', 'picture' , 'search'];
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
 }
